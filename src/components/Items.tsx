@@ -21,6 +21,8 @@ const Items: React.FunctionComponent<IItemsPageProps> = () => {
   let [list, setList] = useState<List>();
   const apiUrl = "https://644a97cc79279846dced2be3.mockapi.io/api/v1/list/";
 
+
+
   const itemSaved = (updatedItem: Item) => {
     let updated = false;
     setItem(undefined);
@@ -37,6 +39,8 @@ const Items: React.FunctionComponent<IItemsPageProps> = () => {
 
     setItems(newItems);
   };
+
+
 
   function deleteRow(id) {
     setDeleteItem(undefined);
@@ -56,12 +60,13 @@ const Items: React.FunctionComponent<IItemsPageProps> = () => {
       });
   }
 
+
+
   function getListName(id) {
     axios
       .get(apiUrl + id)
       .then((response) => {
         setList(response.data);
-        console.log(response.data);
         console.log("Get name succesful");
       })
       .catch((ex) => {
@@ -74,6 +79,8 @@ const Items: React.FunctionComponent<IItemsPageProps> = () => {
       });
   }
 
+
+
   useEffect(() => {
     axios
       .get<Item[]>(apiUrl + listid + "/item", {
@@ -83,8 +90,6 @@ const Items: React.FunctionComponent<IItemsPageProps> = () => {
       })
       .then((response) => {
         setItems(response.data);
-        console.log(response.data);
-
         setLoading(false);
       })
       .catch((ex) => {
@@ -98,16 +103,19 @@ const Items: React.FunctionComponent<IItemsPageProps> = () => {
     getListName(listid);
   }, []);
 
-  const searcheValues = ["title", "text", "state"];
 
+
+  const searcheValues = ["title", "text", "state"];
   const search = (items: Item[]) => {
+
+
     if (searchSelectTerm === "All") {
       setSearchSelectTerm("");
     }
     return items.filter(
       (item) =>
         searcheValues.some((value) =>
-          item[value].toString().toLowerCase().includes(searchTerm)
+          item[value].toString().toLowerCase().includes(searchTerm.toLowerCase())
         ) && item.state.includes(searchSelectTerm)
     );
   };
@@ -129,7 +137,7 @@ const Items: React.FunctionComponent<IItemsPageProps> = () => {
             </label>
           </div>
           <div className="navbar-center">
-            <h2 className="normal-case text-xl">{list?.name}</h2>
+            <h2 className="normal-case text-xl">{list?.title}</h2>
           </div>
           <div className="navbar-end">
             <input

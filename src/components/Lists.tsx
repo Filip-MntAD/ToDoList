@@ -17,7 +17,6 @@ const Items: React.FunctionComponent<IListPageProps> = () => {
 
 
   const listSaved = (updatedList: List) => {
-    console.log(list);
     let updated = false;
     setList(undefined);
     let newLists = lists.map((list) => {
@@ -63,7 +62,7 @@ const Items: React.FunctionComponent<IListPageProps> = () => {
           htmlFor="my-modal-3"
           className="btn"
           onClick={() => {
-            setList({ name: "" });
+            setList({ title: "" });
           }}
         >
           New
@@ -81,7 +80,7 @@ const Items: React.FunctionComponent<IListPageProps> = () => {
           <tbody>
             {lists.map((list) => (
               <tr key={list.id}>
-                <th>{list.name}</th>
+                <th>{list.title}</th>
                 <th>
                   <label
                     onClick={() => navigate("/list/" + list.id)}

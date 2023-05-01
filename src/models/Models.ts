@@ -8,5 +8,5 @@ export interface Item {
 
 export interface List {
   id?: number;
-  name: string;
+  title: string;
 }

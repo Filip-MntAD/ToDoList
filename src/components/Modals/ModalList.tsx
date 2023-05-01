@@ -1,15 +1,15 @@
 import { useState } from "react";
 import axios from "axios";
-import { List } from "../models/Models.ts";
+import { List } from "../../models/Models";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
 const schema = yup.object({
-  name: yup.string().required(),
+  title: yup.string().required()
 });
 type Inputs = {
-  name: string;
+  title: string;
 };
 export interface IModalProps {}
 
@@ -89,10 +89,10 @@ const ModalList = ({
               <input
                 type="text"
                 placeholder="Type here"
-                {...register("name")}
+                {...register("title")}
                 className="input input-bordered w-full"
               />
-              <p>{errors.name?.message?.toString()}</p>
+              <p>{errors.title?.message?.toString()}</p>
             </div>
             <button className="btn btn-success m-3" type="submit">
               Save
