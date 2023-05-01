@@ -6,7 +6,7 @@ import Items from "../src/components/Items";
 import Lists from "../src/components/Lists";
 
 export interface IAppProps {}
-const App: React.FunctionComponent<IAppProps> = (props) => {
+const App: React.FunctionComponent<IAppProps> = () => {
   return (
     <>
       <BrowserRouter>

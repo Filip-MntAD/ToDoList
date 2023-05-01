@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { List } from "../models/Models";
+import { List } from "../models/Models.ts";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -22,9 +22,9 @@ const ModalList = ({
   modalClosed: () => void;
   list: List;
 }) => {
-  const [loading, setLoading]: [boolean, (loading: boolean) => void] =
+  const [, setLoading]: [boolean, (loading: boolean) => void] =
     useState<boolean>(true);
-  const [error, setError]: [string, (error: string) => void] = useState("");
+  const [, setError]: [string, (error: string) => void] = useState("");
   const {
     register,
     handleSubmit,

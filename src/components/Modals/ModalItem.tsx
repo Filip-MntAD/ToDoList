@@ -29,10 +29,9 @@ const ModalItem = ({
   modalClosed: () => void;
   item: Item;
 }) => {
-  const [loading, setLoading]: [boolean, (loading: boolean) => void] =
+  const [, setLoading]: [boolean, (loading: boolean) => void] =
     useState<boolean>(true);
-  const [error, setError]: [string, (error: string) => void] = useState("");
-  //const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>({defaultValues:item});
+  const [, setError]: [string, (error: string) => void] = useState("");
   const {
     register,
     handleSubmit,
