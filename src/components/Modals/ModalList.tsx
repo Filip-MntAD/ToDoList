@@ -28,7 +28,6 @@ const ModalList = ({
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema), defaultValues: list });
 

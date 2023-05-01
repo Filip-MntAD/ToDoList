@@ -6,19 +6,15 @@ import ModalList from "./Modals/ModalList";
 
 export interface IListPageProps {}
 
-const Items: React.FunctionComponent<IListPageProps> = (props) => {
+const Items: React.FunctionComponent<IListPageProps> = () => {
   const defaultList: List[] = [];
 
-  const [loading, setLoading]: [boolean, (loading: boolean) => void] = useState<boolean>(true);
   const [error, setError]: [string, (error: string) => void] = useState("");
   const navigate = useNavigate();
   const [lists, setLists]: [List[], (lists: List[]) => void] = useState(defaultList);
   let [list, setList] = useState<List>();
-  let [items, setItems] = useState<List>();
 
-  let [deleteList, setDeleteList] = useState<Number>();
 
-  const apiUrl = "https://644a97cc79279846dced2be3.mockapi.io/api/v1/list/";
 
   const listSaved = (updatedList: List) => {
     console.log(list);
@@ -48,7 +44,6 @@ const Items: React.FunctionComponent<IListPageProps> = (props) => {
       })
       .then((response) => {
         setLists(response.data);
-        setLoading(false);
       })
       .catch((ex) => {
         const error =
@@ -56,7 +51,6 @@ const Items: React.FunctionComponent<IListPageProps> = (props) => {
             ? "Resource Not found"
             : "An unexpected error has occurred";
         setError(error);
-        setLoading(false);
       });
   }, []);
 

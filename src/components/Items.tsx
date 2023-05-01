@@ -8,7 +8,7 @@ import { format, parseISO } from "date-fns";
 
 export interface IItemsPageProps {}
 
-const Items: React.FunctionComponent<IItemsPageProps> = (props) => {
+const Items: React.FunctionComponent<IItemsPageProps> = () => {
   const { listid } = useParams();
   const defaultItem: Item[] = [];
   const [items, setItems]: [Item[], (items: Item[]) => void] = useState(defaultItem);
@@ -42,7 +42,7 @@ const Items: React.FunctionComponent<IItemsPageProps> = (props) => {
     setDeleteItem(undefined);
     axios
       .delete(apiUrl + listid + `/item/${id}`)
-      .then((response) => {
+      .then(() => {
         console.log("Delete succesful");
         setItems(items.filter((item) => item.id !== id));
       })
