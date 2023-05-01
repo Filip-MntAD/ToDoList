@@ -92,7 +92,7 @@ const ModalList = ({
                 {...register("name")}
                 className="input input-bordered w-full"
               />
-              <p>{errors.name?.message}</p>
+              <p>{errors.name?.message?.toString()}</p>
             </div>
             <button className="btn btn-success m-3" type="submit">
               Save

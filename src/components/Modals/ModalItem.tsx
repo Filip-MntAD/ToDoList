@@ -104,7 +104,7 @@ const ModalItem = ({
                 {...register("title")}
                 className="input input-bordered w-full"
               />
-              <p>{errors.title?.message}</p>
+              <p>{errors.title?.message?.toString()}</p>
 
               <label className="label">
                 <span className="label-text">Choose a deadline:</span>
@@ -127,7 +127,7 @@ const ModalItem = ({
                 {...register("text")}
                 placeholder="Bio"
               ></textarea>
-              <p>{errors.text?.message}</p>
+              <p>{errors.text?.message?.toString()}</p>
               <label className="label">
                 <span className="label-text">Set status of ToDo item</span>
               </label>
@@ -140,7 +140,7 @@ const ModalItem = ({
                   <option value="Finished">Finished</option>
                 </select>
               )}
-              <p>{errors.state?.message}</p>
+              <p>{errors.state?.message?.toString()}</p>
             </div>
             <button className="btn btn-success m-3" type="submit">
               Save

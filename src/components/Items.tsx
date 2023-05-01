@@ -12,7 +12,7 @@ const Items: React.FunctionComponent<IItemsPageProps> = () => {
   const { listid } = useParams();
   const defaultItem: Item[] = [];
   const [items, setItems]: [Item[], (items: Item[]) => void] = useState(defaultItem);
-  const [loading, setLoading]: [boolean, (loading: boolean) => void] = useState<boolean>(true);
+  const [, setLoading]: [boolean, (loading: boolean) => void] = useState<boolean>(true);
   const [error, setError]: [string, (error: string) => void] = useState("");
   let [item, setItem] = useState<Item>();
   let [deleteItem, setDeleteItem] = useState<Number>();
