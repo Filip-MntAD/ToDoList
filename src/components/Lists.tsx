@@ -55,9 +55,8 @@ const Items: React.FunctionComponent<IListPageProps> = () => {
 
   return (
     <>
-      <div className="overflow-x-auto">
-      <div className="navbar bg-base-100">
-          <div className="navbar-end">
+      <div className="flex card bg-base-300 rounded-box place-items-center">
+        <div className="navbar-end">
         <label
           htmlFor="my-modal-3"
           className="btn"
@@ -68,6 +67,7 @@ const Items: React.FunctionComponent<IListPageProps> = () => {
           New
         </label>
       </div>
+      <div className="overflow-x-auto">
       </div>
         <table className="table w-full">
           <thead>

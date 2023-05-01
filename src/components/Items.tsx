@@ -123,8 +123,7 @@ const Items: React.FunctionComponent<IItemsPageProps> = () => {
 
   return (
     <>
-      <div className="overflow-x-auto">
-        <div className="navbar bg-base-100">
+            <div className="flex card bg-base-300 rounded-box place-items-center">
           <div className="navbar-start">
             <label
               htmlFor="my-modal-3"
@@ -156,11 +155,13 @@ const Items: React.FunctionComponent<IItemsPageProps> = () => {
             </select>
           </div>
         </div>
+      <div className="overflow-x-auto">
+
         <table className="table w-full">
           <thead>
             <tr>
               <th>Title</th>
-              <th>Name</th>
+              <th>Text</th>
               <th>Deadline</th>
               <th>Status</th>
               <th>Update</th>

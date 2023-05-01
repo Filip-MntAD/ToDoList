@@ -70,3 +70,13 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+div.flex.card{
+  flex-direction: row;
+
+}
+@media(max-width:768px) {
+  div.flex.card{
+    flex-direction: column;
+  
+  }
+}
